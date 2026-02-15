@@ -1,443 +1,94 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Wilton Collective - Connecting People, Building Community</title>
-    <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@600;700&family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fredoka:wght@600;700&family=Poppins:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: 'Poppins', sans-serif;
-            background: #ffffff;
-            min-height: 100vh;
-            position: relative;
-            overflow-x: hidden;
-        }
-
-        /* Animated background circles */
-        .bg-circles {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            overflow: hidden;
-            z-index: 0;
-        }
-
-        .circle {
-            position: absolute;
-            border-radius: 50%;
-            opacity: 0.15;
-            animation: float 20s infinite ease-in-out;
-        }
-
-        .circle:nth-child(1) {
-            width: 300px;
-            height: 300px;
-            background: #ff6b6b;
-            top: -150px;
-            left: -150px;
-            animation-delay: 0s;
-        }
-
-        .circle:nth-child(2) {
-            width: 200px;
-            height: 200px;
-            background: #ffd700;
-            top: 20%;
-            right: -100px;
-            animation-delay: 2s;
-        }
-
-        .circle:nth-child(3) {
-            width: 250px;
-            height: 250px;
-            background: #4ecdc4;
-            bottom: -125px;
-            left: 10%;
-            animation-delay: 4s;
-        }
-
-        .circle:nth-child(4) {
-            width: 180px;
-            height: 180px;
-            background: #7b68ee;
-            bottom: 15%;
-            right: 5%;
-            animation-delay: 6s;
-        }
-
-        .circle:nth-child(5) {
-            width: 220px;
-            height: 220px;
-            background: #ff8c42;
-            top: 50%;
-            left: -110px;
-            animation-delay: 3s;
-        }
-
-        .circle:nth-child(6) {
-            width: 150px;
-            height: 150px;
-            background: #51cf66;
-            top: 60%;
-            right: 20%;
-            animation-delay: 5s;
-        }
-
-        @keyframes float {
-            0%, 100% {
-                transform: translate(0, 0) scale(1);
-            }
-            33% {
-                transform: translate(30px, -30px) scale(1.1);
-            }
-            66% {
-                transform: translate(-20px, 20px) scale(0.9);
-            }
-        }
-
-        .container {
-            position: relative;
-            z-index: 1;
-            text-align: center;
-            max-width: 900px;
-            width: 100%;
-            margin: 0 auto;
-            padding: 40px 20px;
-            min-height: 100vh;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-        }
-
-        .logo-container {
-            margin-bottom: 30px;
-            animation: bounceIn 1s ease-out;
-            position: relative;
-        }
-
-        .logo-container img {
-            max-width: 450px;
-            width: 100%;
-            height: auto;
-            filter: drop-shadow(0 8px 20px rgba(0, 0, 0, 0.15));
-        }
-
-        h1 {
-            font-family: 'Poppins', sans-serif;
-            color: #1B4F9C;
-            font-size: 4em;
-            margin-bottom: 15px;
-            font-weight: 700;
-            text-transform: uppercase;
-            letter-spacing: 3px;
-            animation: slideInDown 0.8s ease-out 0.2s both;
-            text-shadow: 2px 2px 0px rgba(255, 215, 0, 0.3);
-        }
-
-        .slogan {
-            font-family: 'Poppins', sans-serif;
-            color: #1B4F9C;
-            font-size: 1.8em;
-            margin-bottom: 50px;
-            font-weight: 600;
-            animation: slideInUp 0.8s ease-out 0.4s both;
-        }
-
-        .cta-button {
-            display: inline-flex;
-            align-items: center;
-            gap: 12px;
-            background: #FFD700;
-            color: #1B4F9C;
-            text-decoration: none;
-            padding: 22px 50px;
-            border-radius: 50px;
-            font-size: 1.3em;
-            font-weight: 700;
-            font-family: 'Fredoka', sans-serif;
-            text-transform: uppercase;
-            transition: all 0.3s ease;
-            box-shadow: 0 8px 25px rgba(255, 215, 0, 0.4);
-            animation: slideInUp 0.8s ease-out 0.6s both;
-            position: relative;
-            border: 4px solid #1B4F9C;
-        }
-
-        .cta-button:hover {
-            transform: translateY(-5px) scale(1.05);
-            box-shadow: 0 12px 35px rgba(255, 215, 0, 0.6);
-            background: #FFC700;
-        }
-
-        .cta-button:active {
-            transform: translateY(-2px) scale(1.02);
-        }
-
-        .instagram-icon {
-            width: 32px;
-            height: 32px;
-            fill: #1B4F9C;
-        }
-
-        .contact-section {
-            margin-top: 60px;
-            animation: fadeIn 1s ease-out 0.8s both;
-        }
-
-        .contact-link {
-            display: inline-flex;
-            align-items: center;
-            gap: 10px;
-            color: #1B4F9C;
-            text-decoration: none;
-            font-size: 1.2em;
-            font-weight: 600;
-            padding: 15px 30px;
-            border-radius: 30px;
-            background: rgba(255, 215, 0, 0.2);
-            border: 2px solid #1B4F9C;
-            transition: all 0.3s ease;
-        }
-
-        .contact-link:hover {
-            background: rgba(255, 215, 0, 0.4);
-            transform: translateY(-2px);
-        }
-
-        .email-icon {
-            width: 24px;
-            height: 24px;
-            fill: #1B4F9C;
-        }
-
-        @keyframes fadeIn {
-            from {
-                opacity: 0;
-            }
-            to {
-                opacity: 1;
-            }
-        }
-
-        /* Decorative graphic dots around the page */
-        .floating-dots {
-            position: absolute;
-            width: 100%;
-            height: 100%;
-            top: 0;
-            left: 0;
-            pointer-events: none;
-            z-index: 2;
-        }
-
-        .floating-dot {
-            position: absolute;
-            border-radius: 50%;
-            animation: bobble 3s ease-in-out infinite;
-        }
-
-        .floating-dot:nth-child(1) {
-            width: 40px;
-            height: 40px;
-            background: #ff6b6b;
-            top: 15%;
-            left: 8%;
-            animation-delay: 0s;
-        }
-
-        .floating-dot:nth-child(2) {
-            width: 30px;
-            height: 30px;
-            background: #ffd700;
-            top: 25%;
-            right: 12%;
-            animation-delay: 0.5s;
-        }
-
-        .floating-dot:nth-child(3) {
-            width: 50px;
-            height: 50px;
-            background: #4ecdc4;
-            bottom: 20%;
-            left: 15%;
-            animation-delay: 1s;
-        }
-
-        .floating-dot:nth-child(4) {
-            width: 35px;
-            height: 35px;
-            background: #7b68ee;
-            bottom: 30%;
-            right: 10%;
-            animation-delay: 1.5s;
-        }
-
-        .floating-dot:nth-child(5) {
-            width: 45px;
-            height: 45px;
-            background: #ff8c42;
-            top: 40%;
-            left: 5%;
-            animation-delay: 2s;
-        }
-
-        .floating-dot:nth-child(6) {
-            width: 38px;
-            height: 38px;
-            background: #51cf66;
-            top: 55%;
-            right: 7%;
-            animation-delay: 2.5s;
-        }
-
-        @keyframes bobble {
-            0%, 100% {
-                transform: translateY(0px);
-            }
-            50% {
-                transform: translateY(-20px);
-            }
-        }
-
-        @keyframes bounceIn {
-            0% {
-                opacity: 0;
-                transform: scale(0.3);
-            }
-            50% {
-                opacity: 1;
-                transform: scale(1.05);
-            }
-            70% {
-                transform: scale(0.9);
-            }
-            100% {
-                transform: scale(1);
-            }
-        }
-
-        @keyframes slideInDown {
-            from {
-                opacity: 0;
-                transform: translateY(-50px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        @keyframes slideInUp {
-            from {
-                opacity: 0;
-                transform: translateY(50px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        @media (max-width: 768px) {
-            h1 {
-                font-size: 2.5em;
-            }
-
-            .slogan {
-                font-size: 1.3em;
-            }
-
-            .logo-container img {
-                max-width: 320px;
-            }
-
-            .cta-button {
-                padding: 18px 40px;
-                font-size: 1.1em;
-            }
-
-            .floating-dot {
-                display: none;
-            }
-        }
-
-        @media (max-width: 480px) {
-            h1 {
-                font-size: 2em;
-                letter-spacing: 1px;
-            }
-
-            .slogan {
-                font-size: 1.1em;
-                margin-bottom: 40px;
-            }
-
-            .logo-container img {
-                max-width: 280px;
-            }
-
-            .cta-button {
-                padding: 15px 30px;
-                font-size: 1em;
-            }
-        }
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
     </style>
-</head>
-<body>
+  </head>
+  <body>
     <!-- Animated background circles -->
     <div class="bg-circles">
-        <div class="circle"></div>
-        <div class="circle"></div>
-        <div class="circle"></div>
-        <div class="circle"></div>
-        <div class="circle"></div>
-        <div class="circle"></div>
+      <div class="circle"></div>
+      <div class="circle"></div>
+      <div class="circle"></div>
+      <div class="circle"></div>
+      <div class="circle"></div>
+      <div class="circle"></div>
     </div>
 
     <!-- Floating decorative dots -->
     <div class="floating-dots">
-        <div class="floating-dot"></div>
-        <div class="floating-dot"></div>
-        <div class="floating-dot"></div>
-        <div class="floating-dot"></div>
-        <div class="floating-dot"></div>
-        <div class="floating-dot"></div>
+      <div class="floating-dot"></div>
+      <div class="floating-dot"></div>
+      <div class="floating-dot"></div>
+      <div class="floating-dot"></div>
+      <div class="floating-dot"></div>
+      <div class="floating-dot"></div>
     </div>
 
     <div class="container">
-        <div class="logo-container">
-            <img src="logo.jpeg" alt="Wilton Collective Logo">
-        </div>
-        
-        <h1>Wilton Collective</h1>
-        
-        <p class="slogan">Connecting People, Building Community</p>
-        
-        <a href="https://www.instagram.com/wiltoncollective" class="cta-button" target="_blank" rel="noopener noreferrer">
-            <svg class="instagram-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-                <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
-            </svg>
-            Follow Us for Upcoming Events
-        </a>
+      <div class="logo-container">
+        <img src="logo.jpeg" alt="Wilton Collective Logo" />
+      </div>
 
-        <div class="contact-section">
-            <a href="mailto:info@wiltoncollective.org" class="contact-link">
-                <svg class="email-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-                    <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
-                </svg>
-                Contact Us: info@wiltoncollective.org
-            </a>
-        </div>
+      <h1>Wilton Collective</h1>
+
+      <p class="slogan">Connecting People, Building Community</p>
+
+      <a
+        href="https://www.instagram.com/wiltoncollective"
+        class="cta-button"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        <svg
+          class="instagram-icon"
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 24 24"
+        >
+          <path
+            d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"
+          />
+        </svg>
+        Follow Us for Upcoming Events
+      </a>
+
+      <div class="contact-section">
+        <a href="mailto:info@wiltoncollective.org" class="contact-link">
+          <svg
+            class="email-icon"
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 24 24"
+          >
+            <path
+              d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"
+            />
+          </svg>
+          Contact Us: info@wiltoncollective.org
+        </a>
+      </div>
+
+      <p class="description">
+        Wilton Collective is a community of local residents dedicated to
+        strengthening connections throughout our town. We believe open
+        communication and engagement are essential to understanding, progress,
+        and a healthy civic life. By bringing together families, residents, and
+        town organizations, we aim to foster relationships across diverse
+        perspectives and create spaces where information is shared, voices are
+        heard, and community involvement is accessible to all.
+      </p>
     </div>
-</body>
+  </body>
 </html>
