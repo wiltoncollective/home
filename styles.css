@@ -135,7 +135,7 @@ h1 {
   font-family: "Poppins", sans-serif;
   color: #1b4f9c;
   font-size: 1.8em;
-  margin-bottom: 40px;
+  /* margin-bottom: 40px; */
   font-weight: 600;
   animation: slideInUp 0.8s ease-out 0.4s both;
 }

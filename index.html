@@ -15,6 +15,148 @@
         padding: 0;
         box-sizing: border-box;
       }
+
+      .event-section {
+        margin-top: 50px;
+        width: 100%;
+        text-align: left;
+        background: rgba(255, 255, 255, 0.85);
+        border: 3px solid #1b4f9c;
+        border-radius: 20px;
+        padding: 36px 40px;
+        box-shadow: 0 8px 30px rgba(27, 79, 156, 0.12);
+        animation: slideInUp 0.8s ease-out 1s both;
+        margin-bottom: 30px;
+      }
+
+      .event-section h2 {
+        font-family: "Fredoka", sans-serif;
+        color: #1b4f9c;
+        font-size: 1.6em;
+        margin-bottom: 16px;
+        letter-spacing: 1px;
+      }
+
+      .event-section p {
+        color: #1b4f9c;
+        font-size: 1.05em;
+        font-weight: 500;
+        line-height: 1.7;
+        margin-bottom: 20px;
+      }
+
+      .event-details {
+        list-style: none;
+        margin: 16px 0 24px 0;
+        padding: 0;
+      }
+
+      .event-details li {
+        color: #1b4f9c;
+        font-size: 1.05em;
+        font-weight: 500;
+        padding: 7px 0 7px 28px;
+        position: relative;
+        border-bottom: 1px solid rgba(27, 79, 156, 0.1);
+        line-height: 1.6;
+      }
+
+      .event-details li:last-child {
+        border-bottom: none;
+      }
+
+      .event-details li::before {
+        content: "•";
+        color: #ffd700;
+        font-size: 1.4em;
+        position: absolute;
+        left: 6px;
+        top: 5px;
+        line-height: 1.4;
+        -webkit-text-stroke: 1px #1b4f9c;
+      }
+
+      .event-details a,
+      .event-section a {
+        color: #1b4f9c;
+        font-weight: 700;
+        text-decoration: underline;
+        word-break: break-word;
+      }
+
+      .event-details a:hover,
+      .event-section a:hover {
+        color: #ff8c42;
+      }
+
+      .tips-section {
+        background: rgba(255, 215, 0, 0.15);
+        border-left: 5px solid #ffd700;
+        border-radius: 0 12px 12px 0;
+        padding: 20px 24px;
+        margin-top: 24px;
+      }
+
+      .tips-section h3 {
+        font-family: "Fredoka", sans-serif;
+        color: #1b4f9c;
+        font-size: 1.25em;
+        margin-bottom: 14px;
+        letter-spacing: 0.5px;
+      }
+
+      .tips-list {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+      }
+
+      .tips-list li {
+        color: #1b4f9c;
+        font-size: 1em;
+        font-weight: 500;
+        padding: 6px 0 6px 24px;
+        position: relative;
+        line-height: 1.65;
+      }
+
+      .tips-list li::before {
+        content: "→";
+        color: #1b4f9c;
+        position: absolute;
+        left: 0;
+        top: 6px;
+        font-weight: 700;
+      }
+
+      .minor-box {
+        margin-top: 20px;
+        border: 2px solid #1b4f9c;
+        border-radius: 12px;
+        padding: 18px 22px;
+        background: rgba(255, 255, 255, 0.6);
+      }
+
+      .minor-box h4 {
+        font-family: "Fredoka", sans-serif;
+        color: #1b4f9c;
+        font-size: 1.1em;
+        margin-bottom: 10px;
+      }
+
+      .note-badge {
+        display: inline-block;
+        background: #ff6b6b;
+        color: #fff;
+        font-size: 0.78em;
+        font-weight: 700;
+        border-radius: 6px;
+        padding: 2px 8px;
+        margin-right: 6px;
+        vertical-align: middle;
+        letter-spacing: 0.5px;
+        text-transform: uppercase;
+      }
     </style>
   </head>
   <body>
@@ -46,6 +188,113 @@
       <h1>Wilton Collective</h1>
 
       <p class="slogan">Connecting People, Building Community</p>
+
+      <!-- Packing Event Section -->
+      <div class="event-section">
+        <h2>📦 Packing Event — Volunteer Information</h2>
+
+        <p>
+          So that we can ensure that your packing event is appropriately staffed
+          to meet our packing goal and for the safety of all volunteers, please
+          ensure all expected participants for your event have registered in
+          advance and completed the online waiver. (Please note additional
+          volunteers may be added to ensure we hit our packing goals).
+        </p>
+
+        <h3
+          style="
+            font-family: &quot;Fredoka&quot;, sans-serif;
+            color: #1b4f9c;
+            font-size: 1.2em;
+            margin-bottom: 10px;
+          "
+        >
+          Quick Notes for Your Volunteers:
+        </h3>
+
+        <ul class="event-details">
+          <li>
+            <strong>Event link:</strong>
+            <a
+              href="https://www.volunteerfillingintheblanks.org/need/detail/?need_id=1257650"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              https://www.volunteerfillingintheblanks.org/need/detail/?need_id=1257650
+            </a>
+          </li>
+          <li>
+            <strong>Event Date/Time:</strong> May 21 from 9:30am–11:30am and
+            1–3pm
+          </li>
+          <li>
+            <strong>Location:</strong> 346 Main Avenue, Norwalk CT — entrance is
+            at the double doors
+          </li>
+          <li><strong>Age requirement:</strong> Volunteers aged 14 and up</li>
+          <li>
+            Wear comfortable closed toe shoes and clothing as you will be
+            working in a warehouse
+          </li>
+          <li><strong>Number of volunteers:</strong> 10–15 people</li>
+        </ul>
+
+        <div class="tips-section">
+          <h3>Helpful Tips for the Attendees</h3>
+
+          <ul class="tips-list">
+            <li>
+              For <strong>new volunteers</strong>, please first create an
+              account
+              <a
+                href="https://www.volunteerfillingintheblanks.org/need/detail/?need_id=1257650"
+                target="_blank"
+                rel="noopener noreferrer"
+                >HERE</a
+              >.
+            </li>
+            <li>
+              Make sure to complete all of the prompts on the screen, including
+              the waiver. If you do not complete the Qualification section, you
+              will not be able to sign up for your event.
+            </li>
+            <li>Then use the event link to sign up.</li>
+          </ul>
+
+          <div class="minor-box">
+            <h4>
+              For New Volunteers Who Are Minors (Ages 14–17) — 3-Step Process:
+            </h4>
+            <ul class="tips-list">
+              <li>
+                First, sign up for an account
+                <a
+                  href="https://www.volunteerfillingintheblanks.org/need/detail/?need_id=1257650"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  >HERE</a
+                >.
+              </li>
+              <li>Answer all of the questions including signing the waiver.</li>
+              <li>
+                You will be prompted to enter parent information and email so
+                the parent can sign the adult waiver. The minor will not be able
+                to register without this step being completed.
+                <br /><span class="note-badge">Note</span> The parent email
+                tends to go to the junk folder — please have them check there.
+              </li>
+              <li>
+                Once the parent signs the waiver, the minor will receive an
+                email confirming this step is complete.
+              </li>
+              <li>
+                At this point they will be able to go to the event link to sign
+                up.
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
 
       <a
         href="https://www.instagram.com/wiltoncollective"
